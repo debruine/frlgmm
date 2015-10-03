@@ -4,7 +4,7 @@
 \alias{readTems}
 \title{Read Psychomorph template files from a directory or list of directories.}
 \usage{
-readTems(tem.loc, semi.landmarks = 0, curvefile = "")
+readTems(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE)
 }
 \arguments{
 \item{tem.loc}{Directory or csv table of filenames where .tem files are found}
@@ -12,9 +12,11 @@ readTems(tem.loc, semi.landmarks = 0, curvefile = "")
 \item{semi.landmarks}{Number of curve points to graphically define}
 
 \item{curvefile}{Name of curvepts file}
+
+\item{analyse}{Whether to include aligned data and PCA analysis using FRL defaults (Defaults to TRUE)}
 }
 \value{
-A data structure ready for geomorph, with land, curvepts, and file info
+A data structure with land, curvepts, info and (optionally) aligned and PCA analysed
 }
 \description{
 Read Psychomorph template files from a directory or list of directories.

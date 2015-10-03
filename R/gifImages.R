@@ -32,7 +32,7 @@ gifImages <- function(data, pc = 1, dir = "",
   if (is.null(data$pca)) { data$pca <- getPCA(data) }
 
   coords <- getCoords(data)
-  mean.shape <- mshape(coords)
+  mean.shape <- geomorph::mshape(coords)
 
   # set number of dimensions and number of landmarks
   k <- dim(coords)[2]
