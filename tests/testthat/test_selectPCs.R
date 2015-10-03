@@ -1,0 +1,11 @@
+library("frlgmm")
+context("selectPCs()")
+testthat("mean eigenvalue selects eigenvalues at or above the mean", {
+    pca <- list(sdev = c(10,9,8,7,6,5,4,3,2,1,0))
+    data <- list(pca = pca)
+    expected <- c(1,2,3,4,5,6)
+    expect_equal(selectPCs(data), expected)
+    expect_equal(selectPCs(data, "mean eigenvalue"), expected)
+    expect_equal(selectPCs(data = data, "mean eigenvalue"), expected)
+    expect_equal(selectPCs(data, method = "mean eigenvalue"), expected)
+})
