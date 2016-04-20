@@ -2,9 +2,15 @@ Package: frlgmm
 Title: Face Research Lab Geometric Morphometric Functions
 Version: 0.0.0.9000
 Authors@R: person("Lisa", "DeBruine", email = "debruine@gmail.com", role = c("aut", "cre"))
-Description: Provides functions for face analyses using psychomorph template files and geomorph analyses.
-Depends: R (>= 3.1.1)
-Imports: geomorph (>= 2.1.5), shapes (>= 1.1)
+Description: Provides functions for face analyses using psychomorph template
+    files and geomorph analyses.
+Depends:
+    R (>= 3.1.1)
+Imports:
+    geomorph (>= 2.1.5),
+    shapes (>= 1.1)
 License: file LICENSE
 LazyData: true
-Suggests: testthat
+Suggests:
+    testthat
+RoxygenNote: 5.0.1

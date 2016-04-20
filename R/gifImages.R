@@ -52,7 +52,7 @@ gifImages <- function(data, pc = 1, dir = "",
     pc.vis <- geomorph::arrayspecs(as.matrix(pc.vec %*% (t(data$pca$rotation))), p, k)[, , 1] + mean.shape
     filename <- paste(dir, "/img", sprintf("%03d", i), ".png", sep="")
 
-    plotRefToTarget(mean.shape, pc.vis)
+    geomorph::plotRefToTarget(mean.shape, pc.vis)
     dev.print(png, filename, height = height, width = width)
   }
 }
