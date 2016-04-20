@@ -4,6 +4,7 @@
 #' @param semi.landmarks Number of curve points to graphically define
 #' @param curvefile Name of curvepts file
 #' @param analyse Whether to include aligned data and PCA analysis using FRL defaults (Defaults to TRUE)
+#' @param method The method to use to choose PCs (Default "broken-stick")
 #' @return A data structure with land, curvepts, info and (optionally) aligned and PCA analysed
 #' @examples
 #' faces <- readTems("~/Dropbox/faces")
@@ -74,7 +75,7 @@ readTems <- function(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE
     curvepts <- geomorph::define.sliders(geomorph::mshape(land), semi.landmarks);
   } else {
     message("No curve file");
-    curvepts <- as.matrix(data.frame(before = c(), slide = c(), after = c()));
+    curvepts <- 0;
   }
 
   # create mean shape and add to a mean.tem file with the lines
