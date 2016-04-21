@@ -2,7 +2,7 @@
 % Please edit documentation in R/selectPCs.R
 \name{selectPCs}
 \alias{selectPCs}
-\title{Select PCs using different criteria (from D.A. Jackson (1993). Ecology, 74, 2204-2214.)}
+\title{Select PCs using different criteria}
 \usage{
 selectPCs(data, method = "broken-stick", total.var = 0.95)
 }
@@ -17,7 +17,11 @@ selectPCs(data, method = "broken-stick", total.var = 0.95)
 A list of chosen PCs
 }
 \description{
-Select PCs using different criteria (from D.A. Jackson (1993). Ecology, 74, 2204-2214.)
+\code{selectPCs} returns a list of significant PCs as chosen by one of 3 methods
+(from D.A. Jackson (1993). Ecology, 74, 2204-2214). Defaults to the most accurate
+and conservative "broken-stick" method. Other methods are "Kaiser-Guttman" (PCs
+with eigenvalues greater than the mean eigenvalue) and "total variance" (PCs
+explaining at least total.var variance)
 }
 \examples{
 chosen.pcs <- selectPCs(data)

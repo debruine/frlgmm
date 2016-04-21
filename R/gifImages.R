@@ -11,6 +11,7 @@
 #' @return NULL
 #' @examples
 #' gifImages(faces, pc = 1, dir = "~/Desktop/sd1")
+#' @export
 
 gifImages <- function(data, pc = 1, dir = "",
                       start = -1, end = 1, steps = 20,

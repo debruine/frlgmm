@@ -9,6 +9,7 @@
 #' @examples
 #' face.sd3.min <- graphShape(faces, c(0,0,-2), show.image=T)
 #' face.sd3.max <- graphShape(faces, c(0,0,2), show.image = F, savename="sd3max.tem")
+#' @export
 
 graphShape <- function(data, set.pc = c(0), by = "SD", show.image = F, save.name = "") {
   # modified from http://www.geomorph.net/2015/06/tips-tricks-9-shape-changes-and.html

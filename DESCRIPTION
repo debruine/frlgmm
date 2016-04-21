@@ -9,8 +9,9 @@ Depends:
 Imports:
     geomorph (>= 3.0.1),
     shapes (>= 1.1)
-License: file LICENSE
+License: MIT + file LICENSE
 LazyData: true
 Suggests:
     testthat
+VignetteBuilder: knitr
 RoxygenNote: 5.0.1

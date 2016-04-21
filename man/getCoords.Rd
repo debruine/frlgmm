@@ -2,22 +2,26 @@
 % Please edit documentation in R/getCoords.R
 \name{getCoords}
 \alias{getCoords}
-\title{Get or create coordinates from Data structure or}
+\title{Get or create a 3D array of coordinates}
 \usage{
 getCoords(data)
 }
 \arguments{
 \item{data}{Data structure to check, could be from:
-(1) Data structure from geomorph or created by readTem()
-(2) Data structure with a 3D array named coords
-(3) Data structure with a 3D array named aligned$coords
-(3) 3D array of coordinate values}
+\itemize{
+  \item Data structure from geomorph or created by readTem()
+  \item Data structure with a 3D array named coords
+  \item Data structure with a 3D array named aligned$coords
+  \item 3D array of coordinate values
+}}
 }
 \value{
 A 3D array of coordinate values
 }
 \description{
-Get or create coordinates from Data structure or
+\code{getCoords} returns a 3D array of aligned coordinates
+from an existing 3D array or a data object with coordinates
+or landmarks already specified.
 }
 \examples{
 faces$coords <- getCoords(faces)

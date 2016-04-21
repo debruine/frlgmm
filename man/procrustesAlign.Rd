@@ -2,7 +2,7 @@
 % Please edit documentation in R/procrustesAlign.R
 \name{procrustesAlign}
 \alias{procrustesAlign}
-\title{Procrustes align frlgmm object with FRL defaults.}
+\title{Procrustes align frlgmm object.}
 \usage{
 procrustesAlign(data)
 }
@@ -13,7 +13,10 @@ procrustesAlign(data)
 3D Array of procrustes-aligned coordinates
 }
 \description{
-Procrustes align frlgmm object with FRL defaults.
+Uses geomorph::gpagen with FRL defaults.
+Proj = TRUE: project template landmark data into tangent space.
+ProcD = FALSE: Does not rotate output to principal axes, as this usually turns heads sideways.
+PrinAxes = FALSE: Uses minimising bending energy to slide semilandmarks if curvepts defined.
 }
 \examples{
 faces$aligned <- procrustesAlign(faces)

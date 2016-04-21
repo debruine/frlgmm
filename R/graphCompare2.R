@@ -8,6 +8,7 @@
 #' @return TRUE
 #' @examples
 #' faces$pca <- graphCompare2(faces$aligned$coords, 2, 3)
+#' @export
 
 graphCompare2 <- function(data, axis1 = 1, axis2 = 2, gp = c(),
                           col.gp = c("#d11141", "#f47835", "#ffc425", "#00b159", "#00aedb", "#a200ff")) {

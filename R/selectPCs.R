@@ -1,4 +1,10 @@
-#' Select PCs using different criteria (from D.A. Jackson (1993). Ecology, 74, 2204-2214.)
+#' Select PCs using different criteria
+#'
+#' \code{selectPCs} returns a list of significant PCs as chosen by one of 3 methods
+#' (from D.A. Jackson (1993). Ecology, 74, 2204-2214). Defaults to the most accurate
+#' and conservative "broken-stick" method. Other methods are "Kaiser-Guttman" (PCs
+#' with eigenvalues greater than the mean eigenvalue) and "total variance" (PCs
+#' explaining at least total.var variance)
 #'
 #' @param data Data structure from geomorph or created by readTem()
 #' @param method The method to use to choose PCs (Default "broken-stick")
@@ -6,6 +12,7 @@
 #' @return A list of chosen PCs
 #' @examples
 #' chosen.pcs <- selectPCs(data)
+#' @export
 
 selectPCs <- function(data, method="broken-stick", total.var = .95) {
   if (is.null(data$pca$sdev)) { data$pca <- getPCA(data); }

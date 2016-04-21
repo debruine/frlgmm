@@ -2,7 +2,7 @@
 % Please edit documentation in R/readTems.R
 \name{readTems}
 \alias{readTems}
-\title{Read Psychomorph template files from a directory or list of directories.}
+\title{Read Psychomorph template files}
 \usage{
 readTems(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE,
   method = "broken-stick")
@@ -22,7 +22,8 @@ readTems(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE,
 A data structure with land, curvepts, info and (optionally) aligned and PCA analysed
 }
 \description{
-Read Psychomorph template files from a directory or list of directories.
+\code{readTems} reads Psychomorph/WebMorph .tem files from a directory, a list of directories,
+or a CSV table with the filenames of each template file to be loaded (e.g., "subdir/file1.tem")
 }
 \examples{
 faces <- readTems("~/Dropbox/faces")

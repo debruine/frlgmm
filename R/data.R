@@ -1,0 +1,17 @@
+#' 50 male and 50 female faces
+#'
+#' A dataset containing WebMorph templates from 50 male and
+#' 50 female white adult faces from the 3d.sk website. The CSV
+#' file contains data about each face. The variables are as follows:
+#'
+#' @format A data structure:
+#' \itemize{
+#'   \item land: landmark points from the 100 faces (154 x 2 x 100)
+#'   \item curvepts: semilandmark points from curveslide.csv (62 x 3)
+#'   \item info: data about each face loaded from 3dsk.csv
+#'   \item mean.tem: mean WebMorph template for 100 faces
+#'   \item aligned: results of \code{procrustesAlign}
+#'   \item pca: results of \code{getPCA}
+#'   \item data: results of \code{getData}
+#' }
+"faces"

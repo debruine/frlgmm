@@ -6,6 +6,7 @@
 #' @param method The graphing method for plotRefToTarget (Defaults to "TPS")
 #' @examples
 #' faces$pca <- graphMinMax(faces, 2)
+#' @export
 
 graphMinMax <- function(data, pc = 1, mag = 1, method = "TPS") {
   oldpar <- (par(no.readonly = TRUE))

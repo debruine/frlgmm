@@ -4,6 +4,7 @@
 #' @return A table summarizing the percent variation explained by each PC and the set of PC scores
 #' @examples
 #' faces$pca <- getPCA(faces)
+#' @export
 
 getPCA <- function(data) {
   message("Running PCA");

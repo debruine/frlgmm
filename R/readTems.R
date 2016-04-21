@@ -1,4 +1,7 @@
-#' Read Psychomorph template files from a directory or list of directories.
+#' Read Psychomorph template files
+#'
+#' \code{readTems} reads Psychomorph/WebMorph .tem files from a directory, a list of directories,
+#' or a CSV table with the filenames of each template file to be loaded (e.g., "subdir/file1.tem")
 #'
 #' @param tem.loc Directory or csv table of filenames where .tem files are found
 #' @param semi.landmarks Number of curve points to graphically define
@@ -9,6 +12,7 @@
 #' @examples
 #' faces <- readTems("~/Dropbox/faces")
 #' faces <- readTems("~/Dropbox/faces/faceinfo.csv", curvefile = "~/Dropbox/faces/curveslide.csv"))
+#' @export
 
 readTems <- function(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE, method="broken-stick") {
   oldwd <- getwd();

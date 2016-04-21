@@ -22,6 +22,6 @@ Allocate images to groups based on filenames and regex patterns
 \examples{
 faces$info$group <- groupByName(faces$info$filename,
                                 names=c("male","female"),
-                                patterns=c("^male/*","^female/*")))
+                                patterns=c("^male/*","^female/*"))
 }
 

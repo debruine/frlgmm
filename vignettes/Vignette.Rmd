@@ -1,0 +1,79 @@
+---
+title: "Vignette"
+author: "Lisa DeBruine"
+date: "21 April 2016"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+
+
+```{r, include = FALSE}
+library(frlgmm)
+knitr::opts_chunk$set(fig.dpi = 96)
+```
+
+## Average Shape
+
+```{r, echo=FALSE}
+a <- graphShape(faces, show.image=T, set.pc = c(0));
+```
+
+## 1SD on each PC
+
+```{r, echo=FALSE}
+a <- graphShape(faces, show.image=T, set.pc = c(1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,0,0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,0,0,0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,0,0,0,0,1));
+a <- graphShape(faces, show.image=T, set.pc = c(0,0,0,0,0,0,0,1));
+
+# set up groups
+faces$info$group <- groupByName(faces$info$filename,
+                                names=c("male","female"),
+                                patterns=c("^male/*","^female/*"));
+
+# make graph comparing two PCs
+graphCompare2(faces, gp=faces$sex, col.gp=c("#FF6666", "#000099"), axis1=1, axis2=2);
+
+# view min and max values for a PC
+graphMinMax(faces, pc=1);
+
+# view projected face at +1SD for first 8 PCs and save to "new.tem"
+tem.vis <- graphShape(faces, set.pc = c(0), show.image=T);
+
+tem.vis <- graphShape(faces, set.pc = c(0,1,-1), show.image=F,
+                      save.name = "test2.tem",
+                      sample.tem = faces$mean.tem,
+                      align.to = c(1,2));
+
+# make a folder of stills for a gif
+gifImages(faces, pc = 2, start = -1, end = 1, steps = 20, dir = "~/Desktop/sd2");
+
+# k-fold cross validation of models
+library("DAAG");
+
+# scale all numeric variables
+data.is.numeric <- sapply(faces$data, is.numeric);
+data.num <- as.data.frame(scale(faces$data[,data.is.numeric]))
+data.string <- faces$data[,!data.is.numeric]
+faces$data.s <- cbind(data.string, data.num)
+
+fm <- formula(att ~ PC1 + PC2 + PC3 + PC4 + PC5 + PC6 + PC7 + PC8);
+data <- faces$data.s[faces$data.s$sex=="female",]
+cv <- cv.lm(data = data, form.lm = fm, m=10);
+fit <- lm(fm, data = data);
+summary(fit);
+
+plus.sd <- fit$coefficients[2:9];
+
+# make +/- 3 SD face shapes
+a <- graphShape(faces, set.pc = plus.sd*3, by = "SD", show.image = T)
+a <- graphShape(faces, set.pc = plus.sd*(-3), by = "SD", show.image = T)
+```

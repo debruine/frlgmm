@@ -7,6 +7,7 @@
 #' @param data An frlgmm data object to align to
 #' @examples
 #' saveTem(coords, save.name="sd3max.tem", sample.tem=faces$info$filename[1]))
+#' @export
 
 saveTem <- function(coords, save.name = "", sample.tem = "", align.to = c(1,2), data = NULL) {
   pt.n <- dim(coords)[1];
@@ -39,7 +40,8 @@ saveTem <- function(coords, save.name = "", sample.tem = "", align.to = c(1,2), 
 
   # align image
   if (!is.null(data) && !is.null(data$aligned)) {
-    resize.factor <- mean(faces$aligned$Csize);
+    # resize.factor <- mean(faces$aligned$Csize);
+    resize.factor <- 3818.326;
 
     shift.x <- data$aligned$shift$x;
     shift.y <- data$aligned$shift$y;
