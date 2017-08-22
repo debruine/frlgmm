@@ -28,4 +28,3 @@ Project (and optionally graph and/or save to a file) a shape using an array of S
 face.sd3.min <- graphShape(faces, c(0,0,-2), show.image=T)
 face.sd3.max <- graphShape(faces, c(0,0,2), show.image = F, savename="sd3max.tem")
 }
-

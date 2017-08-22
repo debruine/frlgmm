@@ -20,4 +20,3 @@ Create a data frame with data from data$info and PCs from data$pca
 \examples{
 mydata <- saveData(data, pcs = rep(1:10), save.name = "~/Desktop/mydata.csv")
 }
-

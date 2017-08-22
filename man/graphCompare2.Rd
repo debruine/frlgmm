@@ -28,4 +28,3 @@ Create a graph plotting two PCs and visualising min and max for those PCs.
 \examples{
 faces$pca <- graphCompare2(faces$aligned$coords, 2, 3)
 }
-

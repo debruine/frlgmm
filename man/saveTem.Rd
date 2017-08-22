@@ -24,4 +24,3 @@ Save coordinates to a file
 \examples{
 saveTem(coords, save.name="sd3max.tem", sample.tem=faces$info$filename[1]))
 }
-

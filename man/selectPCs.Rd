@@ -26,4 +26,3 @@ explaining at least total.var variance)
 \examples{
 chosen.pcs <- selectPCs(data)
 }
-

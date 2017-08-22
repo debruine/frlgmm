@@ -22,4 +22,3 @@ Rotate aligned data to upright using eye point locations
 \examples{
 faces$aligned$coords <- uprightFace(faces$aligned$coords)
 }
-

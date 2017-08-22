@@ -30,4 +30,3 @@ Create images for a moving gif
 \examples{
 gifImages(faces, pc = 1, dir = "~/Desktop/sd1")
 }
-

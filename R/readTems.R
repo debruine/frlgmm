@@ -18,8 +18,6 @@ readTems <- function(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE
   oldwd <- getwd();
   on.exit(setwd(oldwd), add = TRUE);
 
-  coordinates <- list();
-
   if (file.info(tem.loc)[1, "isdir"]) {
     # get all tem files in each directory
     message(paste("Getting tem files from directory:", tem.loc));
@@ -55,20 +53,29 @@ readTems <- function(tem.loc, semi.landmarks = 0, curvefile = "", analyse = TRUE
     if (file.exists(temfiles[i])) {
       coords <- read.table(temfiles[i], skip = 1, nrows = landmarks,
                            stringsAsFactors = FALSE);
-      coordinates <- rbind(coordinates, coords);
+
+      # reverse the y-coordinates because psychomorph (0,0) is the upper left corner
+      coords[, 2] <- -1*coords[, 2]
+      coordrow <- t(as.data.frame(c(t(coords))))
+
+      if (i == 1) {
+        coordinates <- coordrow;
+      } else {
+        coordinates <- rbind(coordinates, coordrow);
+      }
     } else {
       stop(paste(temfiles[i], "could not be found, import failed"));
     }
   }
 
-  # reverse the y-coordinates because psychomorph (0,0) is the upper left corner
-  coordinates[, 2] <- coordinates[, 2] * -1;
+  dimnames(coordinates)[[2]] <- paste0(rep(c("X.", "Y."), times=landmarks), rep(1:landmarks, each = 2))
+  dimnames(coordinates)[[1]] <- as.list(teminfo$id);
 
   # reorganise data to make a 3-dimensional array
   dimensions <- 2;
-  land <- geomorph::arrayspecs(coordinates, landmarks, dimensions);
+  land <- geomorph::arrayspecs(coordinates, landmarks, dimensions, sep=".");
 
-  dimnames(land)[[3]] <- as.list(teminfo$id);
+  dimnames(land)
 
   # load description of landmarks and semilandmarks
 

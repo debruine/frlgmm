@@ -21,4 +21,3 @@ PrinAxes = FALSE: Uses minimising bending energy to slide semilandmarks if curve
 \examples{
 faces$aligned <- procrustesAlign(faces)
 }
-

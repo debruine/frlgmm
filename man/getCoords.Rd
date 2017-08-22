@@ -26,4 +26,3 @@ or landmarks already specified.
 \examples{
 faces$coords <- getCoords(faces)
 }
-

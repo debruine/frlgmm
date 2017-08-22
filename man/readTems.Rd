@@ -29,4 +29,3 @@ or a CSV table with the filenames of each template file to be loaded (e.g., "sub
 faces <- readTems("~/Dropbox/faces")
 faces <- readTems("~/Dropbox/faces/faceinfo.csv", curvefile = "~/Dropbox/faces/curveslide.csv"))
 }
-

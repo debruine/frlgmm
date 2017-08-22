@@ -24,4 +24,3 @@ faces$info$group <- groupByName(faces$info$filename,
                                 names=c("male","female"),
                                 patterns=c("^male/*","^female/*"))
 }
-

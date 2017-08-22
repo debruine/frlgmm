@@ -21,4 +21,3 @@ Create a graph comparing min and max values on one PC
 \examples{
 faces$pca <- graphMinMax(faces, 2)
 }
-

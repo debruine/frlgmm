@@ -18,4 +18,3 @@ Get PCA Data
 \examples{
 faces$pca <- getPCA(faces)
 }
-

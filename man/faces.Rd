@@ -23,4 +23,3 @@ A dataset containing WebMorph templates from 50 male and
 file contains data about each face. The variables are as follows:
 }
 \keyword{datasets}
-
