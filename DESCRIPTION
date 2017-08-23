@@ -12,6 +12,8 @@ Imports:
 License: MIT + file LICENSE
 LazyData: true
 Suggests:
-    testthat
+    testthat,
+    knitr,
+    DAAG
 VignetteBuilder: knitr
 RoxygenNote: 6.0.1

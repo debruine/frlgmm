@@ -49,9 +49,7 @@ graphMinMax(faces, pc=1);
 tem.vis <- graphShape(faces, set.pc = c(0), show.image=T);
 
 tem.vis <- graphShape(faces, set.pc = c(0,1,-1), show.image=F,
-                      save.name = "test2.tem",
-                      sample.tem = faces$mean.tem,
-                      align.to = c(1,2));
+                      save.name = "test2.tem");
 
 # make a folder of stills for a gif
 gifImages(faces, pc = 2, start = -1, end = 1, steps = 20, dir = "~/Desktop/sd2");
